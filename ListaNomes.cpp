@@ -93,7 +93,6 @@ class ListaNomes : Lista {
 
 		cout << "O primeiro nome alfabeticamente é: " << menor << endl;
 	}
-
 	void mostraMaior()  override
     {
         string maior = lista[0];
@@ -105,4 +104,36 @@ class ListaNomes : Lista {
         }
 		cout << "O último nome alfabeticamente é: " << maior << endl;
 	}
+
+    //Ordenar lista de nome
+    void ordenarLista()
+        {
+            for(int i=1; i<lista.size() ;i++)
+            {
+                for( int j=0; j<lista.size()-1; j++)
+                {
+                    if(lista[j] > lista[j+1])
+                    {
+                        string temp;
+                        temp = lista[j];
+                        lista[j] = lista[j+1];
+                        lista[j+1] = temp;
+
+                    }
+
+                }
+            }
+    }
+	void listarEmOrdem() override {
+        ordenarLista();
+        cout << "Lista em ordem alfabetica: " << endl;
+        for(int i = 0; i <lista.size() ; i++){
+            cout << lista[i] << endl;
+        }
+    }
+	virtual void listarNPrimeiros(int n)  override {
+         for(int i = 0; i < n; i++){
+            cout << lista[i] << endl;
+        }
+    }
 };

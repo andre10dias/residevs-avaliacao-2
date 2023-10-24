@@ -114,4 +114,6 @@ class ListaDatas : public Lista  {
 			int index = lista.size();
 			cout << "Maior data: " << lista[index-1].toString() << endl;
 		}
+    void listarEmOrdem() override {}
+	virtual void listarNPrimeiros(int n)  override {}
 };
