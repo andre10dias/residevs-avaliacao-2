@@ -212,7 +212,7 @@ class ListaDatas : public Lista  {
 		elementos v�o existir na lista e depois
 		solicita a digita��o de cada um deles
 		*/	
-		void entradaDeDados() {
+		void entradaDeDados() override {
 			int qtdItens = 0; 
 			int contador = 0;
 			bool dataValida = true;
@@ -267,7 +267,7 @@ class ListaDatas : public Lista  {
 			}
 		}
 
-		void imprimir() {
+		void imprimir() override {
 			systemClear();
 			cout << "Datas inseridas em ordem cronologica:" << endl;
 
@@ -279,7 +279,7 @@ class ListaDatas : public Lista  {
 			cout << endl << endl;
 		}
 		
-		void mostraMediana() {
+		void mostraMediana() override {
 			lista = Data::ordenaDatasCrescente(lista);
 			Data mediana;
 			int tamanho = lista.size();
@@ -297,11 +297,11 @@ class ListaDatas : public Lista  {
 			cout << "Mediana: " << mediana.toString() << endl;
 		}
 		
-		void mostraMenor() {
+		void mostraMenor() override {
 			cout << "Menor data: " << lista[0].toString() << endl;
 		}
 
-		void mostraMaior() {
+		void mostraMaior() override {
 			int index = lista.size();
 			cout << "Maior data: " << lista[index-1].toString() << endl;
 		}
