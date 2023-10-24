@@ -9,7 +9,7 @@
 using namespace std;
 
 
-class ListaNomes {
+class ListaNomes : Lista {
 	vector<string> lista;
 	
 	public:
@@ -19,7 +19,7 @@ class ListaNomes {
 	elementos vão existir na lista e depois
 	solicita a digitação de cada um deles
 	*/	
-	void entradaDeDados() 
+	void entradaDeDados()  override
     {
         string elemento;
         int qtde;
@@ -51,7 +51,7 @@ class ListaNomes {
         }
 	}
 		
-	void mostraMediana() 
+	void mostraMediana()  override
     {   
         int divisao = (lista.size() / 2);
         string mediana = "";
@@ -79,14 +79,14 @@ class ListaNomes {
 		cout << "A mediana da lista de nomes é: " << mediana << endl;
 	}
 	
-	void mostraMenor() 
+	void mostraMenor()  override
     {
         string menor;
 
 		cout << "O primeiro nome alfabeticamente é: " << menor << endl;
 	}
 
-	void mostraMaior() 
+	void mostraMaior()  override
     {
         string maior;
         

@@ -9,7 +9,7 @@
 using namespace std;
 
 
-class ListaIdades  {
+class ListaIdades : Lista {
 	vector<int> lista;
 	
 	public:
@@ -19,7 +19,7 @@ class ListaIdades  {
 	elementos v�o existir na lista e depois
 	solicita a digita��o de cada um deles
 	*/	
-	void entradaDeDados() 
+	void entradaDeDados()  override
     {
         int elemento;
         int qtde;
@@ -50,7 +50,7 @@ class ListaIdades  {
         }
 	}
 
-    void mostraMediana() 
+    void mostraMediana()  override
     {   
         int divisao = (lista.size() / 2);
         float mediana;
@@ -67,7 +67,7 @@ class ListaIdades  {
 		cout << "A mediana da lista de idades é: " << mediana << endl;
 	}
 	
-	void mostraMenor() 
+	void mostraMenor()  override
     {
         int menor;
         getValorMinimo(lista, menor);
@@ -75,7 +75,7 @@ class ListaIdades  {
 		cout << "O menor das idades é: " << menor << endl;
 	}
 
-	void mostraMaior() 
+	void mostraMaior()  override
     {
         int maior;
         getValorMaximo(lista, maior);
