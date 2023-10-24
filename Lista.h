@@ -1,4 +1,6 @@
-#pragma once
+#ifndef LISTA_H
+#define LISTA_H
+
 class Lista 
 {
 	public:
@@ -7,3 +9,4 @@ class Lista
 	virtual void mostraMenor() =0;
 	virtual void mostraMaior() =0;
 };
+#endif
