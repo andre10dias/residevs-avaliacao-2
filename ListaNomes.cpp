@@ -4,6 +4,7 @@
 #include <climits>
 #include <cctype>
 
+#include "Lista.h"
 #include "funcoes_uteis.h"
 
 using namespace std;

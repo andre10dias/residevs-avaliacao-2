@@ -1,8 +1,10 @@
+#include "Lista.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <climits>
 #include <cctype>
+
 
 #include "funcoes_uteis.h"
 
