@@ -1,3 +1,9 @@
+# vscode
+.vscode
+
+# folder
+output/
+
 # Prerequisites
 *.d
 
