@@ -54,6 +54,7 @@ class ListaNomes : Lista {
 		
 	void mostraMediana()  override
     {   
+        ordenarLista();
         int divisao = (lista.size() / 2);
         string mediana = "";
 
@@ -128,11 +129,6 @@ class ListaNomes : Lista {
         ordenarLista();
         cout << "Lista em ordem alfabetica: " << endl;
         for(int i = 0; i <lista.size() ; i++){
-            cout << lista[i] << endl;
-        }
-    }
-	virtual void listarNPrimeiros(int n)  override {
-         for(int i = 0; i < n; i++){
             cout << lista[i] << endl;
         }
     }

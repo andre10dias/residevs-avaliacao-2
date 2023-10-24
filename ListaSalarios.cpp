@@ -84,4 +84,7 @@ class ListaSalarios : Lista {
         
 		cout << "O maior dos salarios é: " << maior << endl;
 	}
+    void ordenarLista(){}
+    void listarEmOrdem() override {}
+	virtual void listarNPrimeiros(int n)  override {}
 };

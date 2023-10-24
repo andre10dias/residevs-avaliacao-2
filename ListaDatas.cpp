@@ -114,6 +114,19 @@ class ListaDatas : public Lista  {
 			int index = lista.size();
 			cout << "Maior data: " << lista[index-1].toString() << endl;
 		}
-    void listarEmOrdem() override {}
-	virtual void listarNPrimeiros(int n)  override {}
+		
+    void listarEmOrdem() override {
+		lista = Data::ordenaDatasCrescente(lista);
+        cout << "Lista em ordem crescente: " << endl;
+        for(int i = 0; i <lista.size() ; i++){
+            cout << lista[i].toString() << endl;
+        }
+
+	}
+	virtual void listarNPrimeiros(int n)  override {
+        cout << "Lista dos " << n << " primeiros: " << endl;
+        for(int i = 0; i < n; i++){
+            cout << lista[i].toString() << endl;
+        }
+	}
 };

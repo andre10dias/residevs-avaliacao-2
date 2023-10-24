@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 class ListaIdades : Lista {
 	vector<int> lista;
 	
@@ -82,4 +81,36 @@ class ListaIdades : Lista {
         
 		cout << "O maior das idades é: " << maior << endl;
 	}
+    //Ordenar lista de nome
+    void ordenarLista()
+        {
+            for(int i=1; i<lista.size() ;i++)
+            {
+                for( int j=0; j<lista.size()-1; j++)
+                {
+                    if(lista[j] > lista[j+1])
+                    {
+                        int temp;
+                        temp = lista[j];
+                        lista[j] = lista[j+1];
+                        lista[j+1] = temp;
+
+                    }
+
+                }
+            }
+    }
+    void listarEmOrdem() override {
+        ordenarLista();
+        cout << "Lista em ordem crescente: " << endl;
+        for(int i = 0; i <lista.size() ; i++){
+            cout << lista[i] << endl;
+        }
+    }
+	virtual void listarNPrimeiros(int n)  override {
+        cout << "Lista dos " << n << " primeiros: " << endl;
+        for(int i = 0; i < n; i++){
+            cout << lista[i] << endl;
+        }
+    }
 };
