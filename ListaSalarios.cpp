@@ -1,3 +1,5 @@
+#include "Lista.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,7 +11,7 @@
 using namespace std;
 
 
-class ListaSalarios  {
+class ListaSalarios : Lista {
 	vector<float> lista;
 	
 	public:
@@ -19,7 +21,7 @@ class ListaSalarios  {
 	elementos vão existir na lista e depois
 	solicita a digitação de cada um deles
 	*/	
-	void entradaDeDados() 
+	void entradaDeDados() override
     {
         float elemento;
         int qtde;
@@ -50,7 +52,7 @@ class ListaSalarios  {
         }
 	}
 			
-	void mostraMediana() 
+	void mostraMediana() override
     {   
         int divisao = (lista.size() / 2);
         float mediana;
@@ -67,7 +69,7 @@ class ListaSalarios  {
 		cout << "A mediana da lista de salários é: " << mediana << endl;
 	}
 	
-	void mostraMenor() 
+	void mostraMenor() override
     {
         float menor;
         getValorMinimo(lista, menor);
@@ -75,7 +77,7 @@ class ListaSalarios  {
 		cout << "O menor dos salarios é: " << menor << endl;
 	}
 
-	void mostraMaior() 
+	void mostraMaior() override
     {
         float maior;
         getValorMaximo(lista, maior);
