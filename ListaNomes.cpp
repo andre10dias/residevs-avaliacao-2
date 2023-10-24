@@ -81,15 +81,27 @@ class ListaNomes : Lista {
 	
 	void mostraMenor()  override
     {
-        string menor;
+        string menor = lista[0];
+        
+        for (int i = 0; i < lista.size() ; i++) {
+            if(lista[i]<menor){
+                menor = lista[i];
+            }
+        }
+        
 
 		cout << "O primeiro nome alfabeticamente é: " << menor << endl;
 	}
 
 	void mostraMaior()  override
     {
-        string maior;
+        string maior = lista[0];
         
+        for (int i = 0; i < lista.size() ; i++) {
+            if(lista[i]>maior){
+                maior = lista[i];
+            }
+        }
 		cout << "O último nome alfabeticamente é: " << maior << endl;
 	}
 };
