@@ -8,5 +8,7 @@ class Lista
 	virtual void mostraMediana() =0;
 	virtual void mostraMenor() =0;
 	virtual void mostraMaior() =0;
+	virtual void listarEmOrdem() = 0;
+	virtual void listarNPrimeiros(int n) = 0;
 };
 #endif
