@@ -1,4 +1,3 @@
-#include "Lista.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,7 +5,8 @@
 #include <cctype>
 
 
-#include "funcoes_uteis.h"
+#include "include/funcoes_uteis.h"
+#include "include/Lista.h"
 
 using namespace std;
 
@@ -123,7 +123,12 @@ class ListaDatas : public Lista  {
         }
 
 	}
-	virtual void listarNPrimeiros(int n)  override {
+	virtual void listarNPrimeiros()  override {
+		int n = 0;
+		do {
+		cout << "Deseja ver os dados até qual índice? (entre 0 - " << lista.size() << "):";
+		cin >> n;
+        } while (n < 0 || n>lista.size());
         cout << "Lista dos " << n << " primeiros: " << endl;
         for(int i = 0; i < n; i++){
             cout << lista[i].toString() << endl;

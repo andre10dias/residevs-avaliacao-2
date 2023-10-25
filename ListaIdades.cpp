@@ -3,8 +3,9 @@
 #include <vector>
 #include <climits>
 #include <cctype>
-#include "Lista.h"
-#include "funcoes_uteis.h"
+
+#include "include/Lista.h"
+#include "include/funcoes_uteis.h"
 
 using namespace std;
 
@@ -51,6 +52,7 @@ class ListaIdades : Lista {
 
     void mostraMediana()  override
     {   
+        ordenarLista();
         int divisao = (lista.size() / 2);
         float mediana;
 
@@ -107,7 +109,12 @@ class ListaIdades : Lista {
             cout << lista[i] << endl;
         }
     }
-	virtual void listarNPrimeiros(int n)  override {
+	virtual void listarNPrimeiros()  override {
+        int n = 0;
+		do {
+		cout << "Deseja ver os dados até qual índice? (entre 0 - " << lista.size() << "):";
+		cin >> n;
+        } while (n < 0 || n>lista.size());
         cout << "Lista dos " << n << " primeiros: " << endl;
         for(int i = 0; i < n; i++){
             cout << lista[i] << endl;

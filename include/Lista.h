@@ -9,6 +9,6 @@ class Lista
 	virtual void mostraMenor() =0;
 	virtual void mostraMaior() =0;
 	virtual void listarEmOrdem() = 0;
-	virtual void listarNPrimeiros(int n);
+	virtual void listarNPrimeiros() =0;
 };
 #endif

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "funcoes_uteis.h"
+#include "include/funcoes_uteis.h"
 
 using namespace std;
 

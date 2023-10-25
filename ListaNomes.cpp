@@ -4,8 +4,8 @@
 #include <climits>
 #include <cctype>
 
-#include "Lista.h"
-#include "funcoes_uteis.h"
+#include "include/Lista.h"
+#include "include/funcoes_uteis.h"
 
 using namespace std;
 
@@ -45,7 +45,9 @@ class ListaNomes : Lista {
 		// solicitar cada elemento
         for (int i = 0; i < qtde; i++) 
         {
-            cout << "Elemento " + to_string(i + 1) + ": "; cin >> elemento;
+            cout << "Elemento " + to_string(i + 1) + ": "; 
+            cin.ignore();
+            getline(cin, elemento);
             //-colocar validacao
 
             lista.push_back(elemento);
@@ -98,7 +100,7 @@ class ListaNomes : Lista {
     {
         string maior = lista[0];
         
-        for (int i = 0; i < lista.size() ; i++) {
+        for (long unsigned int i = 0; i < lista.size() ; i++) {
             if(lista[i]>maior){
                 maior = lista[i];
             }
@@ -113,7 +115,7 @@ class ListaNomes : Lista {
             {
                 for( int j=0; j<lista.size()-1; j++)
                 {
-                    if(lista[j] > lista[j+1])
+                    if(lista[j].compare(lista[j+1]) > 0)
                     {
                         string temp;
                         temp = lista[j];
@@ -129,6 +131,18 @@ class ListaNomes : Lista {
         ordenarLista();
         cout << "Lista em ordem alfabetica: " << endl;
         for(int i = 0; i <lista.size() ; i++){
+            cout << lista[i] << endl;
+        }
+    }
+
+    virtual void listarNPrimeiros()  override {
+        int n = 0;
+        do {
+		cout << "Deseja ver os dados até qual índice? (entre 0 - " << lista.size() << "):";
+		cin >> n;
+        } while (n < 0 || n>lista.size());
+        cout << "Lista dos " << n << " primeiros: " << endl;
+        for(int i = 0; i < n; i++){
             cout << lista[i] << endl;
         }
     }
