@@ -3,6 +3,7 @@
 #include <vector>
 #include <climits>
 #include <cctype>
+#include <limits>
 
 #include "include/Lista.h"
 #include "include/funcoes_uteis.h"
@@ -41,12 +42,14 @@ class ListaNomes : Lista {
         } 
         while (!flag);
 
+         // Adicionar cin.ignore() para descartar o caractere de nova linha
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		// solicitar cada elemento
         for (int i = 0; i < qtde; i++) 
         {
-            cout << "Elemento " + to_string(i + 1) + ": "; 
-            cin.ignore();
+            cout << "Nome " + to_string(i + 1) + ": "; 
+            //cin.ignore();
             getline(cin, elemento);
             //-colocar validacao
 
@@ -54,34 +57,27 @@ class ListaNomes : Lista {
         }
 	}
 		
-	void mostraMediana()  override
-    {   
-        ordenarLista();
-        int divisao = (lista.size() / 2);
-        string mediana = "";
+    void mostraMediana() override
+{
+    ordenarLista();
 
-        if ( isPar(divisao) )
-        {
-            string primeiro = lista[divisao - 1];
-            string segundo = lista[divisao ];
-             
-            for ( unsigned int i = 0; i < primeiro.length() && mediana == ""; i++ ) 
-            {
-                if ( primeiro[i] > segundo[i] ) {
-                    mediana = primeiro;
-                } 
-                else if ( primeiro[i] < segundo[i] ) {
-                    mediana = segundo;
-                }
-            }
-        } 
-        else
-        {
-            mediana = lista[divisao];
-        }
+    if (lista.size() % 2 == 0)
+    {
+        int meio1 = lista.size() / 2 - 1;
+        int meio2 = lista.size() / 2;
+        string mediana = lista[meio1];
 
-		cout << "A mediana da lista de nomes é: " << mediana << endl;
-	}
+        cout << "A mediana da lista de nomes é: " << mediana << endl;
+    }
+    else
+    {
+        int meio = lista.size() / 2;
+        string mediana = lista[meio];
+
+        cout << "A mediana da lista de nomes é: " << mediana << endl;
+    }
+}
+
 	
 	void mostraMenor()  override
     {

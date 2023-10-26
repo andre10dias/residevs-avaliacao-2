@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 template<typename T> void getValorMaximo(vector<T> elementos, T &maximo) 
 {
     T max = INT_MIN;

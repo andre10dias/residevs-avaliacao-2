@@ -79,11 +79,12 @@ ListaIdades listaIdades;
         cout << endl;
 		listaDatas.mostraMenor();
         cout << endl;
+        listaDatas.listarEmOrdem();
+        cout << endl;
 		listaDatas.mostraMediana();
         cout << endl;
-		listaNomes.listarNPrimeiros();
+		listaDatas.listarNPrimeiros();
         cout << endl;
-
             break;
 		}
         case 3:
@@ -94,9 +95,11 @@ ListaIdades listaIdades;
         cout << endl;
 		listaSalarios.mostraMenor();
         cout << endl;
+        listaSalarios.listarEmOrdem();
+        cout << endl;
 		listaSalarios.mostraMediana();
         cout << endl;
-		listaNomes.listarNPrimeiros();
+		listaSalarios.listarNPrimeiros();
         cout << endl;
 
             break;
@@ -109,9 +112,11 @@ ListaIdades listaIdades;
         cout << endl;
 		listaIdades.mostraMenor();
         cout << endl;
+        listaIdades.listarEmOrdem();
+        cout << endl;
 		listaIdades.mostraMediana();
         cout << endl;
-		listaNomes.listarNPrimeiros();
+		listaIdades.listarNPrimeiros();
         cout << endl;
 
 			break;
@@ -122,7 +127,7 @@ ListaIdades listaIdades;
             exit(0);
 
         default:
-            cout << "Opção invalida!" << endl;
+            cout << "Opção inválida!" << endl;
             break;
         }
     }

@@ -43,30 +43,33 @@ class ListaIdades : Lista {
 		// solicitar cada elemento
         for (int i = 0; i < qtde; i++) 
         {
-            cout << "Elemento " + to_string(i + 1) + ": "; cin >> elemento;
+            cout << "Data " + to_string(i + 1) + ": "; cin >> elemento;
             //-colocar validacao
 
             lista.push_back(elemento);
         }
 	}
 
-    void mostraMediana()  override
-    {   
-        ordenarLista();
-        int divisao = (lista.size() / 2);
-        float mediana;
+    void mostraMediana() override
+{   
+    ordenarLista();
+    int tamanho = lista.size();
+    float mediana;
 
-        if ( isPar(divisao) )
-        {
-            mediana = (lista[divisao] + lista[divisao - 1]) / 2;
-        } 
-        else
-        {
-            mediana = lista[divisao];
-        }
+    if (isPar(tamanho))
+    {
+        int indiceMeio1 = (tamanho / 2) - 1;
+        int indiceMeio2 = tamanho / 2;
+        mediana = (lista[indiceMeio1] + lista[indiceMeio2]) / 2.0; // Média dos dois elementos do meio
+    } 
+    else
+    {
+        mediana = lista[tamanho / 2];
+    }
 
-		cout << "A mediana da lista de idades é: " << mediana << endl;
-	}
+    cout << "A mediana da lista de idades é: " << mediana << endl;
+}
+
 	
 	void mostraMenor()  override
     {
@@ -83,7 +86,7 @@ class ListaIdades : Lista {
         
 		cout << "O maior das idades é: " << maior << endl;
 	}
-    //Ordenar lista de nome
+    //Ordenar lista de idade
     void ordenarLista()
         {
             for(int i=1; i<lista.size() ;i++)
