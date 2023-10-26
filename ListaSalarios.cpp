@@ -53,24 +53,24 @@ class ListaSalarios : Lista {
 	}
 
     void mostraMediana() override
-{   
-    ordenarLista();
-    int tamanho = lista.size();
-    float mediana;
+    {   
+        ordenarLista();
+        int tamanho = lista.size();
+        float mediana;
 
-    if (isPar(tamanho))
-    {
-        int indiceMeio1 = (tamanho / 2) - 1;
-        int indiceMeio2 = tamanho / 2;
-        mediana = (lista[indiceMeio1] + lista[indiceMeio2]) / 2.0; // Média dos dois elementos do meio
-    } 
-    else
-    {
-        mediana = lista[tamanho / 2];
+        if (isPar(tamanho))
+        {
+            int indiceMeio1 = (tamanho / 2) - 1;
+            int indiceMeio2 = tamanho / 2;
+            mediana = (lista[indiceMeio1] + lista[indiceMeio2]) / 2.0; // Média dos dois elementos do meio
+        } 
+        else
+        {
+            mediana = lista[tamanho / 2];
+        }
+
+        cout << "A mediana da lista de idades é: " << mediana << endl;
     }
-
-    cout << "A mediana da lista de idades é: " << mediana << endl;
-}
 	
 	void mostraMenor() override
     {
@@ -88,38 +88,45 @@ class ListaSalarios : Lista {
 		cout << "O maior dos salarios é: " << maior << endl;
 	}
 
-     //Ordenar lista de nome
+    //Ordenar lista de nome
     void ordenarLista()
+    {
+        int tamanho = lista.size();
+
+        for(int i = 1; i < tamanho ;i++)
         {
-            for(int i=1; i<lista.size() ;i++)
+            for(int j = 0; j < tamanho-1; j++)
             {
-                for( int j=0; j<lista.size()-1; j++)
+                if(lista[j] > lista[j+1])
                 {
-                    if(lista[j] > lista[j+1])
-                    {
-                        int temp;
-                        temp = lista[j];
-                        lista[j] = lista[j+1];
-                        lista[j+1] = temp;
-
-                    }
-
+                    int temp;
+                    temp = lista[j];
+                    lista[j] = lista[j+1];
+                    lista[j+1] = temp;
                 }
             }
+        }
     }
+
     void listarEmOrdem() override {
         ordenarLista();
+        int tamanho = lista.size();
         cout << "Lista em ordem crescente: " << endl;
-        for(int i = 0; i <lista.size() ; i++){
+
+        for(int i = 0; i < tamanho; i++){
             cout << lista[i] << endl;
         }
     }
+
 	virtual void listarNPrimeiros()  override {
+        int tamanho = lista.size();
         int n = 0;
+
 		do {
-		cout << "Deseja ver os dados até qual índice? (entre 0 - " << lista.size() << "):";
-		cin >> n;
-        } while (n < 0 || n>lista.size());
+            cout << "Deseja ver os dados até qual índice? (entre 0 - " << tamanho << "):";
+            cin >> n;
+        } while (n < 0 || n > tamanho);
+
         cout << "Lista dos " << n << " primeiros: " << endl;
         for(int i = 0; i < n; i++){
             cout << lista[i] << endl;
