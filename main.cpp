@@ -4,7 +4,10 @@
 #include <climits>
 #include <cctype>
 
-#include "Lista.cpp"
+#include "include/funcoes_uteis.h"
+#include "include/Lista.h"
+// #include "include/ListaDatas.h"
+
 #include "Data.cpp"
 #include "ListaDatas.cpp"
 #include "ListaNomes.cpp"
@@ -55,33 +58,67 @@ ListaIdades listaIdades;
         case 1:
 		{
 		listaNomes.entradaDeDados();
-    	listaNomes.mostraMaior();
+        cout << endl;
+        listaNomes.mostraMaior();
+        cout << endl;
 		listaNomes.mostraMenor();
+        cout << endl;
+		listaNomes.listarEmOrdem();
+        cout << endl;
 		listaNomes.mostraMediana();
+        cout << endl;
+        listaNomes.listarNPrimeiros();
+        cout << endl;
             break;
 		}
         case 2:
 		{
 		listaDatas.entradaDeDados();
+        cout << endl;
 		listaDatas.mostraMaior();
+        cout << endl;
 		listaDatas.mostraMenor();
+        cout << endl;
+        listaDatas.listarEmOrdem();
+        cout << endl;
 		listaDatas.mostraMediana();
+        cout << endl;
+		listaDatas.listarNPrimeiros();
+        cout << endl;
             break;
 		}
         case 3:
 		{
 		listaSalarios.entradaDeDados();
+        cout << endl;
     	listaSalarios.mostraMaior();
+        cout << endl;
 		listaSalarios.mostraMenor();
+        cout << endl;
+        listaSalarios.listarEmOrdem();
+        cout << endl;
 		listaSalarios.mostraMediana();
+        cout << endl;
+		listaSalarios.listarNPrimeiros();
+        cout << endl;
+
             break;
 		}
         case 4:
 		{
 		listaIdades.entradaDeDados();
+        cout << endl;
 		listaIdades.mostraMaior();
+        cout << endl;
 		listaIdades.mostraMenor();
+        cout << endl;
+        listaIdades.listarEmOrdem();
+        cout << endl;
 		listaIdades.mostraMediana();
+        cout << endl;
+		listaIdades.listarNPrimeiros();
+        cout << endl;
+
 			break;
 		}
             
@@ -90,30 +127,10 @@ ListaIdades listaIdades;
             exit(0);
 
         default:
-            cout << "Opção invalida!" << endl;
+            cout << "Opção inválida!" << endl;
             break;
         }
     }
 
 }
 
-// vector<Lista*> listaDeListas;
-
-	
-	
-
-
-	
-
-	
-
-	
-	
-		
-
-	// for (Lista* l : listaDeListas) {
-	// 	l->mostraMediana();
-	// 	l->mostraMenor();
-	// 	l->mostraMaior();
-	// }
-	

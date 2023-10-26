@@ -4,10 +4,9 @@
 #include <climits>
 #include <cctype>
 
-#include "funcoes_uteis.h"
+#include "include/funcoes_uteis.h"
 
 using namespace std;
-
 
 template<typename T> void getValorMaximo(vector<T> elementos, T &maximo) 
 {
@@ -49,7 +48,7 @@ bool isPar(int _numero)
 
 bool isImpar(int _numero)
 {
-    return _numero % 3 == 0;
+    return _numero % 2 == 1;
 }
 
 bool isNumeroValido(int numero) 

@@ -1,4 +1,3 @@
-#include "Lista.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,7 +5,8 @@
 #include <cctype>
 
 
-#include "funcoes_uteis.h"
+#include "include/funcoes_uteis.h"
+#include "include/Lista.h"
 
 using namespace std;
 
@@ -17,9 +17,9 @@ class ListaDatas : public Lista  {
 	public:
 		
 		/*
-		O m�todo abaixo pergunta ao usu�rios quantos
-		elementos v�o existir na lista e depois
-		solicita a digita��o de cada um deles
+		O metodo abaixo pergunta ao usuarios quantos
+		elementos vao existir na lista e depois
+		solicita a digitacao de cada um deles
 		*/	
 		void entradaDeDados() override {
 			int qtdItens = 0; 
@@ -27,7 +27,7 @@ class ListaDatas : public Lista  {
 			bool dataValida = true;
 			string entrada, dia, mes, ano;
 
-			systemClear();
+			// systemClear();
 			cout << "Informe a quantidade de itens na lista: ";
 			cin >> qtdItens;
 
@@ -35,7 +35,7 @@ class ListaDatas : public Lista  {
 			{
 				do
 				{
-					systemClear();
+					//systemClear();
 					cout << "Inserindo Datas na lista:" << endl;
 
 					cout << "\nInforme uma data no formato dd/mm/aaaa: ";
@@ -77,7 +77,7 @@ class ListaDatas : public Lista  {
 		}
 
 		void imprimir() {
-			systemClear();
+			//systemClear();
 			cout << "Datas inseridas em ordem cronologica:" << endl;
 
 			for (Data data : lista)
@@ -123,7 +123,12 @@ class ListaDatas : public Lista  {
         }
 
 	}
-	virtual void listarNPrimeiros(int n)  override {
+	virtual void listarNPrimeiros()  override {
+		int n = 0;
+		do {
+		cout << "Deseja ver os dados até qual índice? (entre 0 - " << lista.size() << "):";
+		cin >> n;
+        } while (n < 0 || n>lista.size());
         cout << "Lista dos " << n << " primeiros: " << endl;
         for(int i = 0; i < n; i++){
             cout << lista[i].toString() << endl;

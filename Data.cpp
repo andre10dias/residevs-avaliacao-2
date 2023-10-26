@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "funcoes_uteis.h"
+#include "include/funcoes_uteis.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ class Data {
 	public:
 	
 	/*
-	O m�todo abaixo retornar� -1 se d1 � anterior a d2
+	O metodo abaixo retornar -1 se d1 é anterior a d2
 	Retornar� 0 se d1 = d2
 	Retornar� +1 se d1 � posterior a d2
 	*/	
