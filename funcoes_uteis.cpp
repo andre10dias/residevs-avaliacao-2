@@ -1,58 +1,56 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <climits>
-#include <cctype>
-
 #include "include/funcoes_uteis.h"
 
 using namespace std;
 
-template<typename T> void getValorMaximo(vector<T> elementos, T &maximo) 
-{
+template void getValorMinimo(vector<int> elementos, int &minimo);
+template void getValorMaximo(vector<int> elementos, int &maximo);
+template void getValorMinimo(vector<float> elementos, float &minimo);
+template void getValorMaximo(vector<float> elementos, float &maximo);
+
+
+template <typename T>
+void getValorMaximo(vector<T> elementos, T &maximo) {
     T max = INT_MIN;
 
-    for (unsigned int i = 0; i < elementos.size(); i++)
-    {
-        if (elementos[i] > max) { max = elementos[i]; }
+    for (unsigned int i = 0; i < elementos.size(); i++) {
+        if (elementos[i] > max) {
+            max = elementos[i];
+        }
     }
 
     maximo = max;
 }
 
-template<typename T> void getValorMinimo(vector<T> elementos, T &minimo) 
-{
+template <typename T>
+void getValorMinimo(vector<T> elementos, T &minimo) {
     T min = INT_MAX;
 
-    for (unsigned int i = 0; i < elementos.size(); i++)
-    {
-        if (elementos[i] < min) { min = elementos[i]; }
+    for (unsigned int i = 0; i < elementos.size(); i++) {
+        if (elementos[i] < min) {
+            min = elementos[i];
+        }
     }
 
     minimo = min;
 }
 
-bool isTextoValido(std::string _nome)
-{
-    if ( _nome.empty() ) {
+bool isTextoValido(std::string _nome) {
+    if (_nome.empty()) {
         return false;
     }
 
     return true;
 }
 
-bool isPar(int _numero)
-{
+bool isPar(int _numero) {
     return _numero % 2 == 0;
 }
 
-bool isImpar(int _numero)
-{
+bool isImpar(int _numero) {
     return _numero % 2 == 1;
 }
 
-bool isNumeroValido(int numero) 
-{
+bool isNumeroValido(int numero) {
     return isPar(numero) || isImpar(numero) || numero == 1;
 }
 

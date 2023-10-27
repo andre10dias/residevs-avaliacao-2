@@ -1,19 +1,8 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <climits>
-#include <cctype>
+#include "include/lib.h"
 
-#include "include/funcoes_uteis.h"
-#include "include/Lista.h"
-// #include "include/ListaDatas.h"
 
-#include "Data.cpp"
-#include "ListaDatas.cpp"
-#include "ListaNomes.cpp"
-#include "ListaIdades.cpp"
-#include "ListaSalarios.cpp"
-#include "funcoes_uteis.cpp"
 
 #define TRACO "-------------------------------------------------"
 
@@ -33,6 +22,7 @@ int monta_menu(vector<string> itens, string titulo) {
 }
 
 int main () {
+    
     ListaNomes listaNomes;
     ListaDatas listaDatas;
     ListaSalarios listaSalarios;
